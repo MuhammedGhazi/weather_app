@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,6 +9,17 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Weather App"),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchPage(),
+                    ));
+              },
+              icon: const Icon(Icons.search))
+        ],
       ),
       body: Center(
         child: Column(
